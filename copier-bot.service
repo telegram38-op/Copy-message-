@@ -1,0 +1,14 @@
+[Unit]
+Description=Telegram Copier Bot
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=ubuntu
+WorkingDirectory=/home/ubuntu/copier-bot
+ExecStart=/home/ubuntu/copier-bot/venv/bin/python copier_bot.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target
